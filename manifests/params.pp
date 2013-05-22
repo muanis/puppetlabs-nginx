@@ -27,6 +27,9 @@ class nginx::params {
   $nx_tcp_nodelay        = on
   $nx_gzip               = on
 
+  $nx_proxy_pass_default = off
+  $nx_proxy_pass_default_target = ''
+
   $nx_proxy_redirect          = off
   $nx_proxy_set_header        = [
     'Host $host', 'X-Real-IP $remote_addr',

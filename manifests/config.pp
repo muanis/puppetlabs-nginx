@@ -69,6 +69,11 @@ class nginx::config(
     content => template('nginx/conf.d/proxy.conf.erb'),
   }
 
+  # file { "${nginx::params::nx_conf_dir}/conf.d/default.conf":
+  #   ensure  => file,
+  #   content => template('nginx/conf.d/default.conf.erb'),
+  # }
+
   file { "${nginx::config::nx_temp_dir}/nginx.d":
     ensure  => directory,
     purge   => true,
